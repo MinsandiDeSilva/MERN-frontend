@@ -8,6 +8,7 @@ import { getJobById } from "@/lib/api/jobs";
 import { Briefcase, MapPin } from "lucide-react";
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
+//import {} from ;
 
 function JobPage() {
   const [job, setJob] = useState(null);
