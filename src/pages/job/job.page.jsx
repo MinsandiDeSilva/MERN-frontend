@@ -1,3 +1,4 @@
+//This is the job page
 import { Separator } from "@/components/ui/Separator";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
