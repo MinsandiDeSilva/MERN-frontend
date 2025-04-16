@@ -1,4 +1,3 @@
-//This is the job page
 import { Separator } from "@/components/ui/Separator";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -9,7 +8,6 @@ import { getJobById } from "@/lib/api/jobs";
 import { Briefcase, MapPin } from "lucide-react";
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
-//import {} from ;
 
 function JobPage() {
   const [job, setJob] = useState(null);
