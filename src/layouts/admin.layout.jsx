@@ -2,32 +2,43 @@ import { Outlet } from "react-router-dom";
 import { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { useUser } from "@clerk/clerk-react";
+import { Link } from "react-router-dom";
+import { Button } from "@/components/ui/button";
 
+function AdminLayout() {
+  const { isLoaded, isSignedIn, user } = useUser();
+  const navigate = useNavigate();
 
-function AdminLayout(){
-    const {isLoaded, isSignedIn, user} = useUser();
-    const navigate = useNavigate
+  useEffect(() => {
+    if (!isLoaded) {
+      return;
+    }
 
-    useEffect(() => {
-        if(isLoaded){
-            return;
-        }
+    if (!isSignedIn) {
+      navigate("/sign-in");
+      return;
+    }
 
-        if(!isSignedIn){
-            navigate("/sign-in");
-        }
+    if (user?.publicMetadata?.role !== "admin") {
+      navigate("/");
+    }
+  }, [isLoaded, isSignedIn, navigate, user]);
 
-        if(user?.publicMetadata?.role !== "admin"){
-            navigate("/");
-        }
-    }, [isLoaded, isSignedIn, user, navigate] );
-
-    return(
-        <div>
-            <h1>Admin</h1>
-            <Outlet />
-        </div>
-    );
+  return (
+    <div>
+      <div className="flex items-center gap-x-4">
+        <Button asChild variant="outline">
+          <Link to="/admin/jobs">View Current Job Posts</Link>
+        </Button>
+        <Button asChild>
+          <Link to="/admin/jobs/create">Create New Job Post</Link>
+        </Button>
+      </div>
+      <div className="mt-4">
+        <Outlet />
+      </div>
+    </div>
+  );
 }
 
 export default AdminLayout;
