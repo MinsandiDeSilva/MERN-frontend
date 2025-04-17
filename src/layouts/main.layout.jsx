@@ -5,4 +5,4 @@ function MainLayout() {
     return <Outlet />;
 }
 
-export default MainLayout
+export default MainLayout;
