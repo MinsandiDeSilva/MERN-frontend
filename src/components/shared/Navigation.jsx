@@ -12,10 +12,16 @@ function Navigation() {
       <div className="flex justify-center gap-x-8 items-center">
         <Link to="/">Home</Link>
         <div className="flex gap-x-4 items-center">
-          <Link to={"/sign-in"}>Sign In</Link>
-          <Button asChild>
-            <Link to={"/sign-up"}>Sign Up</Link>
-          </Button>
+          <SignedIn>
+            <UserButton />
+          </SignedIn>
+          <SignOut>
+            <Link to={"/sign-in"}>Sign In</Link>
+            <Button asChild>
+              <Link to={"/sign-up"}>Sign Up</Link>
+            </Button>
+          </SignOut>
+          
         </div>
       </div>
     </nav>
