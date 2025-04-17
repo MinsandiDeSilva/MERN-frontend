@@ -1,8 +1,10 @@
-import Navigation from "@/components/shared/Navigation";
+import { SignUp } from "@clerk/clerk-react";
+
 
 function SignUpPage() {
-    return ( <main>
-        <h1>Sign Up</h1>
+    return ( 
+    <main className="flex flex-col items-center justify-center min-h-screen">
+        <SignUp />
     </main> );
 }
 
