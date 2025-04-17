@@ -1,4 +1,4 @@
-import { SignUp } from "@clerk/clerk-react";
+import { SignIn } from "@clerk/clerk-react";
 
 function SignInPage() {
   return (

@@ -1,5 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
+import { SignedOut, SignedIn, UserButton } from "@clerk/clerk-react";
 
 function Navigation() {
   return (
@@ -15,12 +16,12 @@ function Navigation() {
           <SignedIn>
             <UserButton />
           </SignedIn>
-          <SignOut>
+          <SignedOut>
             <Link to={"/sign-in"}>Sign In</Link>
             <Button asChild>
               <Link to={"/sign-up"}>Sign Up</Link>
             </Button>
-          </SignOut>
+          </SignedOut>
           
         </div>
       </div>
