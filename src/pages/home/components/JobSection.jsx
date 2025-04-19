@@ -1,6 +1,6 @@
 import { getJobs } from "@/lib/api/jobs";
 import { useEffect, useState } from "react";
-import JobCard from "../../../components/shared/JobCard";
+import JobCard from "../../../components/shared/JobCard.jsx";
 
 function JobSection() {
   const [jobs, setJobs] = useState([]);
